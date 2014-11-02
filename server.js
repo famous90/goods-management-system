@@ -7,7 +7,8 @@ var mysql = require('mysql');
 var client = mysql.createConnection({
 	user: 'root',
 	password: 'q1w2e3r4',
-	database: 'project'
+	database: 'project',
+    insecureAuth: true
 });
 
 // make a web server
