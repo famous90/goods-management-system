@@ -1,0 +1,101 @@
+id	brandId	name	subtitle	price	detail	imageurl
+1	4	A&F ALL-SEASON WEATHER WARRIOR PARKA		288000	Parka style jacket, rugged exterior, soft sherpa lining throughout, warm faux fur trim, cozy mock neck collar and cuffs, zip and snap closure, exterior pockets, logo embroidery at left chest and sleeve, Parka Fit, Imported	images/abercrombie/abercrombie1.png
+2	4	OTIS LEDGE JACKET		192000	Military-inspired, worn-in detailing, reinforced stitching, rugged zipper and button-down closure, front pockets with button-down flaps, embroidered logo patch at left sleeve, mock neck collar, Classic Fit, Imported	images/abercrombie/abercrombie2.png
+3	4	MASCOT VARSITY GRAPHIC TEE		36000	Supersoft heather fabric, throwback varsity graphic, self-fabric interior neck taping, Vintage Abercrombie Wash, Muscle Fit, Imported	images/abercrombie/abercrombie3.png
+4	4	DUN BROOK MOUNTAIN HOODIE		144000	Supersoft and comfortable, this classic hoodie is lined with cozy sherpa for warmth, full-zip closure, drawstring hood, front pockets, ribbed trims, logo at left sleeve, Classic Fit, Imported	images/abercrombie/abercrombie4.png
+5	4	ELK LAKE SWEATER		117600	Knit from supersoft yarn, traditional knit pattern with bright contrast color details, timeless shawl collar with logo engraved buttons, front pockets, Classic Fit, Imported	images/abercrombie/abercrombie5.png
+6	4	GIANT MOUNTAIN SWEATER		117600	Knit from supersoft yarn, traditional knit pattern with bright contrast color details, v-neck, ribbed trims, Classic Fit, Imported	images/abercrombie/abercrombie6.png
+7	4	A&F SLIM STRAIGHT JEANS		105600	Heavy hand-done destruction with whiskering and fading through thighs, iconic back pocket stitching, wear cuffed, Destroyed Light Wash, Slim Straight Fit, Imported	images/abercrombie/abercrombie7.png
+8	4	CLASSIC SUNGLASSES		28800	Classic wayfarer style, cobalt blue colored frames, light gray tinted lenses, Imported	images/abercrombie/abercrombie8.png
+9	4	A&F SKINNY JEANS		105600	Heavy hand-done destruction with whiskering and fading through thighs, all-over paint splatter, soda wash effect for a subtly distressed look, iconic back pocket stitching, wear cuffed, Destroyed Medium Wash, Skinny Fit, Imported	images/abercrombie/abercrombie9.png
+10	4	A&F SKINNY JEANS		93600	Heavy whiskering and fading through thighs, iconic back pocket stitching, wear cuffed, Light Wash, Skinny Fit, Imported	images/abercrombie/abercrombie10.png
+11	5	Adidas x KZK x Mark McNairy Monte Carlo Mid 84-Lab.	Running White & Fairway	163500.00	For AW14 fragment Designs Kazuki Kuraishi continues his unique collaboration with adidas Originals	images/adidas/adidas1.png
+12	5	Adidas Originals Firebird Tracktop	Collegiate Navy	82500	The famous Adidas Firebird Track Top, made famous by B-Boys and Ballers in the 70s and 80s	images/adidas/adidas2.png
+13	5	Adidas x Raf Simons Stan Smith	White & Collegiate Green	360000	The latest collaboration between Adidas and Raf Simons sees the celebrated Belgian designer take on the Stan Smith in the silhouette's next stop on the way to world domination	images/adidas/adidas3.png
+14	5	Adidas Originals x Club 75 B All Over Hoody	Black	193500	The B All Over Hoody, from the adidas Originals collaboration with Parisian trio Club 75, is a unique take on a classic piece of sportswear that incorporates the spirit of both brands	images/adidas/adidas4.png
+15	5	Adidas Gazelle Indoor	Collegiate Navy & Runnin White	100500	The Gazelle Indoor made a welcome return for 2014 with Adidas digging deep into the archive to resurrect this iconic silhouette	images/adidas/adidas5.png
+16	5	Adidas Gazelle OG	Stonewash Blue & Running White	97500	A true Adidas classic, this highly versatile trainer from the late 60's was quickly adopted as a casual shoe due to its simple design and the comfort of its sole unit	images/adidas/adidas6.png
+17	5	Adidas Consortium Campus 80s Primeknit	Light Maroon	118500	Once again the clean cut silhouette of the Adidas Campus 80s has allowed the shoe to be revamped and brought into the modern day	images/adidas/adidas7.png
+18	5	Adidas Micropacer OG	Chalk, Black & Light Grey	238500	Finally returning to the fray, is the an Adidas archive classic, the Micropacer	images/adidas/adidas8.png
+19	5	Adidas Tiger Camo Padded Vest	Night Cargo & Black	298500	The shell of the Adidas Tiger Camo Padded Vest is decked out in their night cargo tiger camo print and cold weather protection comes care of down blend insulation	images/adidas/adidas9.png
+20	5	Adidas Tiger Camo Sweat	Black & Night Cargo	118500	Constructed from an acrylic/wool blend, in a chunky knit with an all over tiger camo design, the Adidas Tiger Camo Sweat is a finished off with suede effect elbow panels and a small woven logo patch	images/adidas/adidas10.png
+21	6	single button wool coat		458000	하이넥 스타일이지만 라펠을 접어 이중 연출이 가능하며 카라의 밴드 부분에 배색이 되어있어 고급스러움이 묻어나는 남성 코트	images/customellow/customellow1.png
+22	6	navy wool dress suit		498000	심플한 디자인에 솔리드한 네이비 컬러감으로 모던한 감각을 연출하여준 남성 수트 자켓	images/customellow/customellow2.png
+23	6	paisley linen shirts		158000	전체적으로 페이즐리 패턴이 프린트된 남성셔츠	images/customellow/customellow3.png
+24	6	[voyage] henly neck quilting pullover		340200	밀리터리폼의 헨리넥을 재해석하여 전체적으로 둥근 오버사이즈 실루엣으로 풀어낸 남성 헨리넥 니트 풀오버	images/customellow/customellow4.png
+25	6	melange collar dot shirts		160200	윈도우 페인 체크 패턴에 부분 도트 디테일로 세련된 감각을 연출하여준 남성 셔츠	images/customellow/customellow5.png
+26	6	shawl collar cardigan		394200	베이지, 머스타드톤의 수입 트위드원사를 사용하고 변형 턱 조직을 넣어 편직한 감각적인 스타일링을 완성시켜주는 남성 니트 가디건	images/customellow/customellow6.png
+27	6	wool formal pants		196200	세련된 멜란지 그레이 시가렛 핏으로 모던한 감각을 연출하여주는 남성 팬츠	images/customellow/customellow7.png
+28	6	classic check dress suit		529200	멜란지 컬러 바캉에 브라운 체크가 고급스러우며 모던한 감각을 연출하여준 남성 수트 자켓	images/customellow/customellow8.png
+29	6	navy detachable jumper		448200	조직감 있는 소재가 멋스러우며 캐쥬얼한 스타일의 남성 점퍼	images/customellow/customellow9.png
+30	6	wool jersey stand collar coat		538200	스탠드 카라를 적용하여 세련스러운 모던 룩을 연출하여주는 남성 하이넥 코트	images/customellow/customellow10.png
+31	3	L!VE 패턴 프린트 풀오버		188000	기하학적 문양의 프린트가 전판에 들어간 디자인으로 유니크한 스타일	images/lacoste/lacoste1.png
+32	3	L!VE 퀼팅 스웻셔츠		158000	베이직한 라운드넥 스웻셔츠에 퀼팅으로 유니크함을 더한 디자인	images/lacoste/lacoste2.png
+33	3	L!VE 컨트레스팅 크록 반팔폴로		108000	배색 크록이 들어가고 스트레치 소재로 핏감이 편안한 스타일	images/lacoste/lacoste3.png
+34	3	L!VE BROADWICK		169000	매시즌 큰 사랑을 받는 BROADWICK이 라이브 테마로 재해석된 L!VE BROADWICK. 레트로한 느낌의 슈즈를 찾는다면 바로 이 슈즈	images/lacoste/lacoste4.png
+35	3	다이아몬드 퀼팅 점퍼		348000	면 소재의 다이아몬드 퀼팅 패딩 점퍼로 안감 배색으로 포인트를 준 아이템	images/lacoste/lacoste5.png
+36	3	숄칼라 믹스패턴 가디건		348000	도톰하고 부드러운 터치감과 3가지 패턴이 믹스된 유니크한 디자인	images/lacoste/lacoste6.png
+37	3	L!VE FAST 목도리		83000	L!VE FAST' 로고가 포인트인 목도리	images/lacoste/lacoste7.png
+38	3	[CITY GOLF] 후드 울 코트		538000	울 헤링본 본딩 기능성 소재로 후드와 빅포켓 디테일	images/lacoste/lacoste8.png
+39	3	BOYS 노르딕 가디건		158000	간절기에는 아우터 대용으로 활용 가능한 가디건	images/lacoste/lacoste9.png
+40	3	[REGATTA] 세도우 크록 스웻셔츠		188000	인디고 컬러웨이의 헤비플리스 맨투맨 스웻셔츠로 톤온톤 세도우 크록고 엘보패치가 포인트	images/lacoste/lacoste10.png
+41	7	남여공용 박스 빅로고 후드 집업 텍사스 레인져스		159000	아메리칸룩의 오리지날리티와 컨템포러리한 스트리트 정신을 믹스한 MLB만의 고유함을 보여준다.	images/mlb/mlb1.png
+42	7	여성 기모 트임 원피스 LA 다져스		119000		images/mlb/mlb2.png
+43	7	여성 글리터 소매 야구점퍼 LA 에인절스		329000	아메리칸룩의 오리지날리티와 컨템포러리한 스트리트 정신을 믹스한 MLB만의 고유함을 보여준다.	images/mlb/mlb3.png
+44	7	워싱 베이직캡 보스턴 레드삭스		39000		images/mlb/mlb4.png
+45	7	가죽와펜 울 배색 평챙캡 뉴욕 양키스		49000		images/mlb/mlb5.png
+46	7	체크 별 강아지 스냅백 뉴욕 양키스		43000		images/mlb/mlb6.png
+47	7	패밀리스타일 남여공용 멍멍이 캐릭터 맨투맨 티셔츠 LA 다져스		79000	멍멍이 캐릭터 맨투맨 티셔츠. FAMILY STYLE로 패밀리룩 연출이 가능한 아이템	images/mlb/mlb7.png
+48	7	남여공용 로고포인트 후드 시카고 화이트삭스		139000	아메리칸룩의 오리지날리티와 컨템포러리한 스트리트 정신을 믹스한 MLB만의 고유함을 보여준다.	images/mlb/mlb8.png
+49	7	여성 오버사이즈 다운 점퍼 뉴욕 양키스		439000	오리털 소재 다운 패딩 점퍼입니다. 후드는 탈부착이 가능합니다	images/mlb/mlb9.png
+50	7	쿠퍼스 워딩 울 스냅백 텍사스 레인져스		39000		images/mlb/mlb10.png
+51	8	NB SHOPPER BAG		39000	가볍고 심플한 디자인에 메쉬프린트로 포인트를 준 NB SHOPPER BAG 	images/newbalance/newbalance1.png
+52	8	UNI 호피 프린트 맨투맨		64000	남녀공용 맨투맨	images/newbalance/newbalance2.png
+53	8	WW880CS2		139000	클래식한 느낌을 선사 할 뉴발란스 880워킹화 	images/newbalance/newbalance3.png
+54	8	SD1101AGB		29000	2014년 핫섬머용 '플라잉 로고' 2도 슬라이드	images/newbalance/newbalance4.png
+55	8	W990WB3		239000	99X 시리즈의 최신 모델로 993의 후속 모델	images/newbalance/newbalance5.png
+56	8	레전드 덕다운		239000	여성 전용 FIT	images/newbalance/newbalance6.png
+57	8	라글란 기모맨투맨		69000	스몰로고 여성 라글란 배색 맨투맨	images/newbalance/newbalance7.png
+58	8	플렉스 후드 풀오버		79000	FLEX PACK과 최적 코디되는 이너	images/newbalance/newbalance8.png
+59	8	NEON PACK 맨투맨		64000	ESS+ 후막 빅로고 맨투맨	images/newbalance/newbalance9.png
+60	8	M990GL3		239000	99X 시리즈의 최신 모델로 993의 후속 모델	images/newbalance/newbalance10.png
+61	1	Nike F.C. Stars Pullover	men’s soccer hoodie	96000	The Nike F.C. Stars Pullover Men's Soccer Hoodie is made with durable cotton and raglan sleeves for warmth, comfort and natural range of motion on and off the field.	images/nike/nike1.png
+62	1	Nike BB Pivot Pullover	mes’s hoodie	84000	The Nike BB Pivot Pullover Men's Hoodie is made with French terry fabric and articulated sleeves for insulating warmth and wide range of motion.	images/nike/nike2.png
+63	1	NIKE TECH FLEECE AW77 1.0 FULL-ZIP	mes’s hoodie	132000	The Nike Tech Fleece AW77 1.0 Full-Zip Men's Hoodie features signature AW77 details, along with ultra-lightweight fleece for optimum warmth.	images/nike/nike3.png
+64	1	Nike Air Jordan 1 Mid	White & Cool Grey	114000	The Air Jordan 1 Retro is back in another iconic AJ1 colourway set for reissue this season	images/nike/nike4.png
+65	1	Nike Air Max 95 (1)	Dark Dune & Hyper Cobalt	130800	Nike's Air Max 95 needs no introduction, 18 years on from its introduction the famous runner still impresses with its forward thinking, innovative design	images/nike/nike5.png
+66	1	Nike Blazer Mid PRM VNTG	Black & Sail	82800	This re-issue of the classic 1972 Nike basketball shoe harks back to the very early days of sneaker history	images/nike/nike6.png
+67	1	Nike Lunar Force 1 '14 WC QS	Team Orange	118800	Updating the iconic Air Force 1 with a Lunarlon sole unit, Nike pay homage to the World Basketball Festival held in Chicago, Illinois with a basketball informed iteration of the Lunar Force 1	images/nike/nike7.png
+68	1	Nike x Fragment Design Tennis Classic SP	White & Black	118800	A silhouette whose name serves as its own introduction, the Tennis Classic is an all time great from the Nike archives, dating back to 1973 and has been brought back for 2014 in association with Japanese design powerhouse fragment	images/nike/nike8.png
+69	1	Nike Air Max 95 (2)	University Blue & Bright Mango	138000	Nike's Air Max 95 needs no introduction, 18 years on from its introduction the famous runner still impresses with its forward thinking, innovative design	images/nike/nike9.png
+70	1	JORDAN SUPER.FLY 3	MEN'S BASKETBALL SHOE	168000	The Jordan Super.	images/nike/nike10.png
+71	9	TO301-C5 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon1.png
+72	9	TO301-C2 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon2.png
+73	9	TO301SE-JM 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon3.png
+74	9	TO301-C9 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon4.png
+75	9	TO302-C5 선글라스		69000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon5.png
+76	9	TO301-C7 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon6.png
+77	9	TO301-C10 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon7.png
+78	9	TO301-C11 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon8.png
+79	9	TO301SE-JM2 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon9.png
+80	9	TO301-C8 선글라스		89000	유해자외선으로부터 완벽 보호, UV코팅. 초경량, 고강도, 고탄성의 알러지프리 소재. 다양한 기후변화에 대응하는 발수코팅렌즈. 초고강도 폴리카보네이트 방탄렌즈 적용	images/sodamon/sodamon10.png
+81	10	Alett cardigan CF		258000	패치워크 느낌의 패턴으로 귀여운 가디건 제품입니다. 동일한 컬러의 채도 변화로 튀지 않으면서 세련된 스타일로 착용 가능한 제품입니다.	images/tommy hilfiger/tommy hilfiger1.png
+82	10	Denim ISA shirt		195000	슬림한 핏의 셔츠 제품입니다. 동일한 컬러로 디테일을 처리하여 고급스러우면서 세련된 스타일의 셔츠입니다.	images/tommy hilfiger/tommy hilfiger2.png
+83	10	AK dolores bomber jacket		275000	에센셜한 디자인의 항공 점퍼 제품입니다. 퀼팅 디자인으로 보온성이 높으며, 지퍼 디테일로 편안하게 착용하실 수 있는 제품입니다.	images/tommy hilfiger/tommy hilfiger3.png
+84	10	Honeycomb sweater l/s		105000	와이드한 스트라이프가 돋보이는 니트 제품입니다. 왼쪽 숄더 부분의 지퍼 디테일과 밑단 배색 라이닝으로 세련된 니트입니다.	images/tommy hilfiger/tommy hilfiger4.png
+85	10	Boston parka		255000	빈티지한 컬러의 파카 코트 제품입니다. 패치와 뱃지 디테일로 경쾌함을 더하고 스트링으로 다양한 연출이 가능한 코트입니다.	images/tommy hilfiger/tommy hilfiger5.png
+86	10	AK Hampton stripe pullover HD HWK L/S		82000	베이직한 디자인의 스트라이프 풀오버입니다. 편안한 스타일에 로고와 가죽 패치 디테일이 더해져 세련된 제품입니다.	images/tommy hilfiger/tommy hilfiger6.png
+87	10	AK beatrice zip-thru hd H-knit l/s		145000	전면 힐피거 데님 자수 레터링이 멋스러운 후드 집업입니다. 다양한 컬러와 편안한 착용감으로 활용도가 높은 제품입니다.	images/tommy hilfiger/tommy hilfiger7.png
+88	10	Hudson down vest		275000	경쾌한 컬러감과 스포티한 스타일의 패딩 베스트 제품입니다. 집업 여밈으로 착용 시 편안하며 포멀룩 위에 아우터로 입으셔도 어울리는 깔끔한 디자인의 제품입니다.	images/tommy hilfiger/tommy hilfiger8.png
+89	10	Timber trunk		38000	하와이안 플라워 프린팅이 돋보이는 브리프입니다. 경쾌한 느낌의 패턴으로 멋스러운 제품입니다.	images/tommy hilfiger/tommy hilfiger9.png
+90	10	AK koby crew neck line sweater		278000	쟈카드 패턴의 크루 넥라인 니트 제품입니다. 캐쥬얼한 스타일로 어디에나 매치하기 쉬운 아이템입니다.	images/tommy hilfiger/tommy hilfiger10.png
+91	2	헤비게이지숄칼라가디건	긴팔	49900	다소 굵은 짜임으로 부드러운 감촉을 느낄 수 있는 헤비게이지 가디건입니다	images/uniqlo/uniqlo1.png
+92	2	헤비게이지스탠드넥가디건	긴팔	49900	다소 굵은 짜임으로 부드러운 감촉을 느낄 수 있는 헤비게이지 가디건입니다	images/uniqlo/uniqlo2.png
+93	2	다운베스트	베스트	89900	고품질 다운 소재를 사용하여 뛰어난 보온성을 자랑하는 베스트	images/uniqlo/uniqlo3.png
+94	2	다운재킷	재킷	129000	보온성과 탄력성이 뛰어난 고품질 다운 소재의 재킷	images/uniqlo/uniqlo4.png
+95	2	울블렌드더플코트	코트	129000	추운 겨울, 다양한 씬에 폭넓게 활용할 수 있는 더플 코트	images/uniqlo/uniqlo5.png
+96	2	옥스포드슬림피트셔츠	긴팔	29900	폭넓게 활용할 수 있는 옥스포드 슬림피트 셔츠	images/uniqlo/uniqlo6.png
+97	2	루즈피트테이퍼드진	washed jean	89900	여유감 있는 루즈피트 타입의 진	images/uniqlo/uniqlo7.png
+98	2	스웨트셔츠	긴팔	39900	빈티지한 인상을 주는 스웨트 셔츠	images/uniqlo/uniqlo8.png
+99	2	플란넬체크셔츠	긴팔 버튼다운	29900	푹신푹신한 감촉을 느낄 수 있는 코튼 100% 소재의 플란넬 셔츠	images/uniqlo/uniqlo9.png
+100	2	Urban Sweat풀파카	긴팔	49900	도시적이고 세련된 디자인의 Urban Sweat 풀파카	images/uniqlo/uniqlo10.png

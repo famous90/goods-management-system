@@ -1,0 +1,11 @@
+id	name	thumbnail
+1	NIKE	images/logo/NIKE.png
+2	UNIQLO	images/logo/UNIQLO.png
+3	lacoste	images/logo/lacoste.png
+4	abercrombie	images/logo/abercrombie.png
+5	adidas	images/logo/adidas.png
+6	customellow	images/logo/customellow.png
+7	MLB	images/logo/MLB.png
+8	NewBalance	images/logo/NewBalance.png
+9	sodamon	images/logo/sodamon.png
+10	tommy hilfiger	images/logo/tommy hilfiger.png
