@@ -1,11 +1,11 @@
 id	name	thumbnail
-1	NIKE	images/logo/NIKE.png
-2	UNIQLO	images/logo/UNIQLO.png
-3	lacoste	images/logo/lacoste.png
-4	abercrombie	images/logo/abercrombie.png
-5	adidas	images/logo/adidas.png
-6	customellow	images/logo/customellow.png
-7	MLB	images/logo/MLB.png
-8	NewBalance	images/logo/NewBalance.png
-9	sodamon	images/logo/sodamon.png
-10	tommy hilfiger	images/logo/tommy hilfiger.png
+1	NIKE	https://lh4.googleusercontent.com/KsOSrWyXeTwiyflvz4EtjLFl92pVe2DBr_iK6Vg-Uw=s380-p-no
+2	UNIQLO	https://lh3.googleusercontent.com/s2vMXeC3hDIWGw9AbrD18PM05ha5BYuvP02IacKe0w=s380-p-no
+3	lacoste	https://lh5.googleusercontent.com/PouGVUIQSFEI7sjUXd63ouDxOPpmjody7mei5RE9IQ=s380-p-no
+4	abercrombie	https://lh3.googleusercontent.com/mL4Q8TUdeM-KpFNS8cLvv20Ti802T9oY-JJRwO2HSg=s380-p-no
+5	adidas	https://lh3.googleusercontent.com/y6l3XCWgWFdONiOnV8pehXOddf86NwhCSQwUo88PfA=s380-p-no
+6	customellow	https://lh6.googleusercontent.com/vX8CbMUbnxSw8wmTspsnJzNc_gOMKrE5FhLJQNjFOw=s380-p-no
+7	MLB	https://lh6.googleusercontent.com/ewTuf3257iVaN8kiHPq1bcyVH_qpp6lX5d9hU56N2Q=s380-p-no
+8	NewBalance	https://lh5.googleusercontent.com/zHMzQxrTA5HgOdoATvZOrj0kewkZp5phRlHydMfhSA=s380-p-no
+9	sodamon	https://lh6.googleusercontent.com/1RHmv88GxwAOhnpBB24zVdq7_XjKJiemaNNytXWFwQ=s380-p-no
+10	tommy hilfiger	https://lh6.googleusercontent.com/ioWkS60k2eDCIdxbR71kHgmoldkD_AZcFpd-7CkuMg=s380-p-no
