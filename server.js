@@ -25,8 +25,8 @@ var daumMapApiKey = 'e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40';
 app.get('/brand', function(request, response){
         client.query('SELECT * FROM brand', function(error, data){
                      response.send(data);
-                     console.log('data: 'data);
-                     console.log('error: 'error);
+                     console.log('data: ' + data);
+                     console.log('error: ' + error);
                      });
         });
 
