@@ -1,0 +1,366 @@
+@charset "utf-8";
+
+/* css initialize */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* main content */
+#main1 {
+/*    test*/
+    height: 50px;
+    background: #dddddd;
+}
+
+#main2 {
+    height: 1000px;
+/*    background: #eeeeee;*/
+}
+
+#main3 {
+/*    height: 100px;*/
+/*    test*/
+    background: #828282;
+    height: 0;
+    overflow: hidden;
+}
+
+#main4 {
+/*    test*/
+/*    height: 300px;*/
+    background: #098765;
+}
+
+/* dial content */
+#dialSection {
+    float: left;
+    position: relative;
+    width: 700px;
+    height: 1000px;
+    overflow: hidden;
+    
+/*    test*/
+/*    background: #000000;*/
+}
+
+#subDialRound, #mainDialRound, #dialRoundCenter {
+    -moz-border-radius: 1000px;  /* firefox */
+    -webkit-border-radius: 1000px; /* webkit */
+    border-radius: 1000px;   /* opera */
+}
+
+#subDialRound {
+    position: absolute;
+    width: 1468px;
+    height: 1468px;
+    left: -796px;
+    top: -509px;
+    background: #049DC8;
+}
+
+#mainDialRound {
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    left: 234px;
+    top: 234px;
+    background: #8CE6FD;
+}
+
+#dialRoundCenter {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 250px;
+    top: 250px;
+    background: #f0f0f0;
+}
+
+#mainNav {
+    width: auto;
+    height: auto;
+    position: absolute;
+    
+}
+
+#mainDialSection {
+    position: relative;
+    width: 700px;
+    height: 1000px;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+}
+
+.menuItem {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    
+    -moz-border-radius: 20px;  /* firefox */
+    -webkit-border-radius: 20px; /* webkit */
+    border-radius: 20px;   /* opera */
+}
+
+.menuItemName {
+    display: none;
+}
+
+.menuItemBrandImage {
+    width: 100%;
+}
+
+.subMenu {
+    display: none;
+}
+
+.subMenuSelected {
+    display: block;
+}
+
+.subMenuItem {
+    position: absolute;
+    width: 187px;
+    height: 187px;
+    text-align: center;
+    overflow: hidden;
+    
+    -moz-border-radius: 40px;  /* firefox */
+    -webkit-border-radius: 40px; /* webkit */
+    border-radius: 40px;   /* opera */
+}
+
+.subMenuItemImage {
+    height: 100%;
+    position: relative;
+}
+
+.subMenuItemName {
+    display: none;
+}
+
+.subMenuItemSelected {
+    display: block;
+    left: 461px;
+    top: 131px;
+}
+
+#itemDetailSection {
+    height: 1000px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    max-width: 403px;
+    float: left;
+    
+/*    test*/
+/*    background: #dddddd;*/
+}
+
+.itemDetail {
+    display: none;
+}
+
+.itemDetailSelected {
+    margin-top: 40px;
+    display: inline-block;
+    text-align: center;
+    
+/*    test*/
+/*    background: #aaaaaa;*/
+}
+
+.itemDetailSelected > * {
+        /*    test*/
+/*    border: 1px solid #555555;*/
+}
+
+.itemDetailImage {
+    width: 400px;
+}
+
+.itemDetailName, .itemDetailSubtitle, .itemDetailDetail {
+    width: 400px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.itemDetailName {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.itemDetailSubtitle {
+    text-align: right;
+    margin-right: 30px;
+    margin-left: 30px;
+    width: 340px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.itemDetailPrice {
+    margin-top: 15px;
+    padding-top: 10px;
+    width: 250px;
+    float: left;
+    
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.itemDetailColor {
+    margin-top: 35px;
+    width: 140px;
+    float: left;
+    display: inline-block;
+}
+
+.itemDetailColorBox {
+    width: 35px;
+    height: 35px;
+/*    border: 2px solid #dddddd;*/
+    margin: 3px;
+    float: right;
+}
+
+.itemDetailDetail {
+    width: 380px;
+    margin-top: 20px;
+    padding: 10px;
+    overflow: auto;
+    text-align: left;
+}
+
+.brandDetail {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+/*    test*/
+    background: #567890;
+}
+
+.brandDetail > * {
+/*    test*/
+/*    border: 1px solid #678901;*/
+}
+
+.brandDetail > h3 {
+    position: relative;
+    margin: 30px 30px 0 30px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+#brandDetailLocation {
+}
+
+#brandDetailLocation > * {
+    vertical-align: top;
+    display: inline-block;
+    
+/*    test*/
+/*    border: 1px solid #987654;*/
+}
+
+#brandDetailMap {
+/*    position: relative;*/
+    margin: 30px;
+    padding: 5px;
+    width: 500px;
+    height: 500px;
+    
+/*    test*/
+    background: #F7FF5C;
+}
+
+#brandDetailDescription {
+    margin: 30px;
+}
+
+#brandDetailDescription > * {
+    text-align: center;
+    margin-top: 20px;
+/*    test*/
+/*    border: 1px solid #456789;*/
+}
+
+#brandDetailTitle {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+#brandDetailAddress {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#brandDetailPhone {
+    margin-top: 5px;
+    padding-left: : 20px;
+    padding-right: : 20px;
+    font-size: 15px;
+    text-align: right;
+}
+
+#brandDetailDistance {
+    font-size: 60px;
+    font-weight: 800;
+}
+
+#brandDetailDirection {
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#mainFooter {
+    height: 200px;
+    background: #C7C7C7;
+}

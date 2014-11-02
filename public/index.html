@@ -1,0 +1,419 @@
+<head>
+    <title>Project</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/project.js"></script>
+<!--    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40"></script>-->
+    <style>
+        @import url(styles/project.css);
+    </style>
+    
+    <script>
+        
+        // item
+        function Item(id, brandId, name, subtitle, price, detail, imageurl){
+            this.id = id;
+            this.brandId = brandId;
+            this.name = name;
+            this.subtitle = subtitle;
+            this.price = price;
+            this.detail = detail;
+            this.imageurl = imageurl;
+        }
+        
+        Item.prototype.toString = function(){
+                return 'id: ' + this.id + ' brandId: ' + this.brandId + ' name: ' + this.name;
+            };
+        
+        // item master
+        function ItemMaster(){
+            this.items = new Array();
+        }
+        
+        
+        // brand
+        function Brand(id, name, imageurl){
+            this.id = id;
+            this.name = name;
+            this.imageurl = imageurl;
+            this.itemMaster = new ItemMaster();
+        }
+        
+        Brand.prototype.toString = function(){
+                return 'id: ' + this.id + ' name: ' + this.name + ' imageurl: ' + this.imageurl;
+            };
+        
+        // brand master
+        function BrandMaster(){
+            this.brands = new Array();
+        }
+        
+        BrandMaster.prototype.pushItem = function(item){
+            if (!(item instanceof Item)) { return; }
+            for (var i=0; i<this.brands.length; i++){
+                if (this.brands[i].id == item.brandId) {
+                    this.brands[i].itemMaster.items.push(item);
+                }
+            }
+        };
+            
+    </script>
+    
+    <script>
+        
+        var brandMaster = new BrandMaster();
+        
+    </script>
+    
+    <script>
+        var dialCenterLeft = -62;
+        var dialCenterTop = 225;
+        var brandObjectRadius = 375;
+        var itemObjectRadius = 617;
+        var brandObjectSide = 140;
+        var itemObjectSide = 187;
+        
+        function getObjectName(object) {
+            return object.find('[class$="Name"]').text();
+        }
+        
+        function moveObject(classname, selectedIndex, radius, side, setLength) {
+            
+            var objectLeft = 0;
+            var objectTop = 0;
+//            var objectRotateDegree = 0;
+//            var objectDisplay = '';
+
+            $(classname).each(function (index, item) {
+            
+                // move selected object to the center
+                var transIndex = 0;
+                if ( setLength ) { transIndex = index % setLength; }
+                else { transIndex = index; }
+                
+                objectLeft = radius * Math.cos(Math.PI * (transIndex - selectedIndex) / 6) + dialCenterLeft - side/2;
+                objectTop = radius * Math.sin(Math.PI * (transIndex - selectedIndex) / 6) + dialCenterTop - side/2;
+//                objectRotateDegree = 30 * (transIndex - selectedIndex );
+//                if (((transIndex - selectedIndex )>4) || ((transIndex - selectedIndex )<-1)) { objectDisplay = 'block'; }
+//                else { objectDisplay = 'block'; }
+                
+                $(item).css({ border: '0px', width: side, height: side });
+                if (transIndex == selectedIndex) { $(item).css({ border: '10px solid #aaaaaa', width: side-10, height: side-10 }); }
+                
+                $(item).animate({
+                    left: objectLeft,
+                    top: objectTop
+//                    '-ms-transform' : 'rotate(' + objectRotateDegree + 'deg)',
+//                    '-moz-transform' : 'rotate(' + objectRotateDegree + 'deg)',
+//                    '-o-transform' : 'rotate(' + objectRotateDegree + 'deg)',
+//                    '-webkit-transform' : 'rotate(' + objectRotateDegree + 'deg)',
+//                    'transform' : 'rotate(' + objectRotateDegree + 'deg)'
+//                    display: objectDisplay,
+                }, 1000);
+                
+            });            
+        }
+        
+        function getRandomColorBoxes () {
+            
+            var boxes = '';
+            var boxCount = Math.floor( Math.random()*2 + 1 );
+            
+            for(var i=0; i<boxCount; i++){
+                
+                var color1 = Math.floor( Math.random() * 255 );
+                var color2 = Math.floor( Math.random() * 255 );
+                var color3 = Math.floor( Math.random() * 255 );
+                var changeColor = 50;
+                var changedColor1 = color1 + changeColor;
+                var changedColor2 = color2 + changeColor;
+                var changedColor3 = color3 + changeColor;
+                if (changedColor1 > 255) { changedColor1=255; }
+                if (changedColor2 > 255) { changedColor2=255; }
+                if (changedColor3 > 255) { changedColor3=255; }
+                
+                var rgbColor = 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
+                var changedrgbColor = 'rgb(' + changedColor1 + ', ' + changedColor2 + ', ' + changedColor3 + ')';
+                
+                boxes += '<div class="itemDetailColorBox" style="background: ' + rgbColor + '; border: 3px solid ' + changedrgbColor + ';"></div>'
+            }
+            
+            return boxes;
+        }
+        
+        function getLocation() {
+            if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(showPosition); }
+            else { alert('If you allow geolocation, you can get a nearest brand shop'); }
+        }
+        
+        function showPosition(position) {
+//            alert('lat: ' + position.coords.latitude + 'lon: ' + position.coords.longitude);
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+            var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=16&size=500x500&sensor=false";
+            var mapOutput = '';
+            mapOutput += "<img src='"+img_url+"'>";
+            
+//            $('.brandDetailMap').append();
+            document.getElementById("brandDetailMap").innerHTML = mapOutput;
+        }
+        
+        function getNearbyBrandShop(brandName) {
+            
+            if (navigator.geolocation) { 
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    showNearbyBrandShop(position, brandName);
+                });
+            }
+            else { alert('If you allow geolocation, you can get a nearest brand shop'); }
+            
+        }
+        
+        function showNearbyBrandShop(position, brandName) {
+            
+            $('#main3').animate({
+                height: '800px'
+            }, 'slow');
+            
+            var lat = position.coords.latitude; 
+            var lon = position.coords.longitude;
+            var name = brandName;
+            var url = '/data.redirect?';
+            
+            url += 'lat=' + lat;
+            url += '&lon=' + lon;
+            url += '&name=' + name;
+            
+            $.get(url, function (data) {
+                
+                var minDistance = 0;
+                var nearbyShop;
+                
+                $(data).find('item').each(function (index, item) {
+                    
+                    var distance = Number($(item).find('distance').text());
+                    
+                    if (index==0) { 
+                        minDistance = distance; 
+                        nearbyShop = $(item);
+                    }
+                    
+                    if (minDistance > distance) { 
+                        minDistance = distance; 
+                        nearbyShop = $(item);
+                    }
+                    
+                });
+                
+                // if a neayby shop exist, show it
+                if (minDistance) {
+                    
+                    var nearbyShopLatitude = nearbyShop.find('latitude').text();
+                    var nearbyShopLongitude = nearbyShop.find('longitude').text();
+                    
+//                    var mapContainer = document.getElementById("brandDetailDaumMap");
+//                    var options = {
+//                        center: new daum.maps.LatLng(33.450701, 126.570667),
+//                        level: 3
+//                    };
+//                    
+//                    var map = new daum.maps.Map(mapContainer, options);
+//                    
+                    $('#brandDetailTitle').text(nearbyShop.find('title').text());
+                    $('#brandDetailAddress').text(nearbyShop.find('address').text());
+                    $('#brandDetailPhone').text(nearbyShop.find('phone').text());
+                    $('#brandDetailDistance').text(nearbyShop.find('distance').text()+'m');
+                    $('#brandDetailDirection').text('(여기서 ' + nearbyShop.find('direction').text() + '쪽 방향에 있습니다)');
+                }else {
+                    
+                    $('#main3').animate({
+                        height: '0px'
+                    }, 300);
+                    
+                }
+                
+            });
+            
+        }
+        
+        function selectData() {
+                 
+            // get brands
+            $.getJSON('/brand', function(data){    
+
+                $(data).each(function(index, item){
+
+                    var brand =  new Brand(item.id, item.name, item.imageurl);
+                    brandMaster.brands.push(brand);
+
+                });
+
+            });
+
+            // get items
+            $.getJSON('/items', function(data){
+
+                $(data).each(function(index, item){
+
+                    var item = new Item(item.id, item.brandId, item.name, item.subtitle, item.price, item.detail, item.imageurl);
+                    brandMaster.pushItem(item);
+
+                });
+
+                var mainNavOutput = '';
+                var subNavOutput = '';
+                var itemDetailOutput = '';
+
+                for(var i=0; i<brandMaster.brands.length; i++){
+
+                    var addNavOutput = ' menuItemSelected';
+                    mainNavOutput += '<div class="menuItem';
+//                        if (i==0) { mainNavOutput += addNavOutput; }
+                    mainNavOutput += '">';
+                    mainNavOutput += '<img src="' + brandMaster.brands[i].imageurl + '" class="menuItemBrandImage">';
+                    mainNavOutput += '<div class="menuItemName">' + brandMaster.brands[i].name + '</div>';
+                    mainNavOutput += '</div>';
+
+                    subNavOutput += '<div id="' + brandMaster.brands[i].name + '" class="subMenu">';
+
+                    for(var j=0; j<brandMaster.brands[i].itemMaster.items.length; j++){
+
+                        var addSubNavOutput = ' subMenuItemSelected';
+
+                        subNavOutput += '<div class="subMenuItem';
+//                            if (j==0) { subNavOutput += addSubNavOutput; }
+                        subNavOutput += '">';
+                        subNavOutput += '<img src="' + brandMaster.brands[i].itemMaster.items[j].imageurl + '" class="subMenuItemImage" width="187px">';
+                        subNavOutput += '<div class="subMenuItemName">' + brandMaster.brands[i].itemMaster.items[j].name + '</div>';
+
+                        subNavOutput += '</div>';
+
+                        itemDetailOutput += '<div id="' + brandMaster.brands[i].itemMaster.items[j].name + '" class="itemDetail">';
+
+                        itemDetailOutput += '<img class="itemDetailImage" src="' + brandMaster.brands[i].itemMaster.items[j].imageurl + '">';
+                        itemDetailOutput += '<div class="itemDetailName">' + brandMaster.brands[i].itemMaster.items[j].name + '</div>';
+                        itemDetailOutput += '<div class="itemDetailSubtitle">' + brandMaster.brands[i].itemMaster.items[j].subtitle + '</div>';
+                        itemDetailOutput += '<div class="itemDetailPrice">' + brandMaster.brands[i].itemMaster.items[j].price + '</div>';
+                        itemDetailOutput += '<div class="itemDetailColor">'; 
+                        itemDetailOutput += getRandomColorBoxes();
+                        itemDetailOutput += '</div>';
+                        itemDetailOutput += '<div class="itemDetailDetail">' + brandMaster.brands[i].itemMaster.items[j].detail + '</div>';
+                        itemDetailOutput += '</div>';
+
+                    }
+
+                    subNavOutput += '</div>';
+
+                }
+
+                $('#mainDialSection').append(mainNavOutput);
+                $('#mainDialSection').append(subNavOutput);
+                $('#itemDetailSection').append(itemDetailOutput);
+
+            })
+            .done(function() {
+
+                var brandObjects = $('.menuItem');
+
+                moveObject('.menuItem', 0, brandObjectRadius, brandObjectSide);
+
+                moveObject('.subMenuItem', 0, itemObjectRadius, itemObjectSide, brandObjects.length);
+
+            });
+        }
+        
+        $(document).ready(function(){
+
+            selectData();
+            getLocation();
+    
+        });
+        
+        $(document).on('click', ".menuItem", function () {
+            
+            var previousSelectedObject = $('.subMenuSelected');
+            var selectedBrandObjectName = getObjectName($(this));
+            var selectedBrandObjectIndex = 0;
+            
+            $('.menuItem').each(function (index, item) {
+                if ( selectedBrandObjectName == getObjectName($(item))) { 
+                    selectedBrandObjectIndex = index; 
+                }
+            });
+            
+            moveObject('.menuItem', selectedBrandObjectIndex, brandObjectRadius, brandObjectSide);
+            moveObject('.subMenuItem', 0, itemObjectRadius, itemObjectSide, $('.menuItem').length);            
+            
+            var selectedImageObject = $('.itemDetailSelected');
+            selectedImageObject.removeClass('itemDetailSelected');
+            selectedImageObject.addClass('itemDetail');
+            previousSelectedObject.removeClass('subMenuSelected');
+            previousSelectedObject.addClass('subMenu');
+
+            $("[id='"+ selectedBrandObjectName +"']").removeClass('subMenu');
+            $("[id='"+ selectedBrandObjectName +"']").addClass('subMenuSelected');
+            
+            getNearbyBrandShop(selectedBrandObjectName);
+            
+        });
+        
+        $(document).on('click', ".subMenuItem", function () {
+            
+            var previousSelectedObject = $('.itemDetailSelected');
+            var selectedItemObjectName = getObjectName($(this));
+            var selectedItemObjectIndex = 0;
+            
+            $('.subMenuItem').each(function (index, item) {
+                if ( selectedItemObjectName == getObjectName($(item)) ) { selectedItemObjectIndex = index; }
+            });
+            
+            var setLength = $('.menuItem').length;
+            moveObject('.subMenuItem', selectedItemObjectIndex % setLength, itemObjectRadius, itemObjectSide, setLength);
+            
+            previousSelectedObject.removeClass('itemDetailSelected');
+            previousSelectedObject.addClass('itemDetail');
+
+            $("[id='"+ selectedItemObjectName +"']").removeClass('itemDetail');
+            $("[id='"+ selectedItemObjectName +"']").addClass('itemDetailSelected');
+            
+        });
+        
+    </script>
+
+</head>
+<body>
+    <div id="main1">
+    </div>
+    <div id="main2">
+        <div id="dialSection">
+            <div id="subDialRound">
+                <div id="mainDialRound">
+                    <div id="dialRoundCenter">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mainNav">
+            <div id="mainDialSection"></div>
+            <div id="itemDetailSection"></div>
+        </div>
+    </div>
+    <div id="main3">
+        <div class="brandDetail">
+            <h3>현재 이 매장의 근처에 있습니다</h3>
+            <div id="brandDetailLocation">
+                <div id="brandDetailMap">
+                    <div id="brandDetailDaumMap" style="width:500px;height:500px;"></div>
+                </div>
+                <div id="brandDetailDescription">
+                    <div id="brandDetailTitle"></div>
+                    <div id="brandDetailAddress"></div>
+                    <div id="brandDetailPhone"></div>
+                    <div id="brandDetailDistance"></div>
+                    <div id="brandDetailDirection"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main4">
+    </div>
+    <footer id="mainFooter"></footer>
+</body>

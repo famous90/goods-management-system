@@ -1,0 +1,186 @@
+var http = require('http');
+var https = require('https');
+var express = require('express');
+var mysql = require('mysql');
+
+// connect to database
+var client = mysql.createConnection({
+	user: 'root',
+	password: 'q1w2e3r4',
+	database: 'project'
+});
+
+// make a web server
+var app = express();
+app.use(express.static('public'));
+app.use(express.bodyParser());
+app.use(app.router);
+
+// daum api key
+var daumLocalApiKey = '15e9a80af4b72b9101d4d985c737f7e1b6308416';
+var daumMapApiKey = 'e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40';
+
+
+// brand
+app.get('/brand', function(request, response){
+        client.query('SELECT * FROM brand', function(error, data){
+                     response.send(data);
+                     });
+        });
+
+app.get('/brand/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        
+        client.query('SELECT * FROM brand WHERE id=?', [id], function(error, data){
+                     response.send(data);
+                     });
+        
+        });
+
+app.post('/brand', function(request, response){
+         
+         var name = request.param('name');
+         var imageurl = request.param('imageurl');
+         
+         client.query('INSERT INTO brand (name, imageurl) VALUES(?, ?)', [name, imageurl], function(error, data){
+                      response.send(data);
+                      });
+         
+         });
+
+app.put('/brand/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        var name = request.param('name');
+        var imageurl = request.param('imageurl');
+        var query = 'UPDATE brand SET';
+        
+        if (name) query += 'name="' + name + '" ';
+        if (imageurl) query += 'imageurl"' + imageurl + '" ';
+        query += 'WHERE id=' + id;
+        
+        client.query('query', function(error, data){
+                     response.send(data);
+                     });
+        
+        });
+
+app.del('/brand/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        
+        client.query('DELETE FROM brand WHERE id=?', [id], function(error, data){
+                     response.send(data);
+                     });
+        
+        });
+
+app.get('/data.redirect?', function(request, response) {
+        
+        var lat = request.param('lat');
+        var lon = request.param('lon');
+        var name = request.param('name');
+        
+        var url = 'https://apis.daum.net/local/v1/search/keyword.xml?' + 'apikey=' + daumLocalApiKey + '&location=' + lat + ',' + lon + '&query=' + name;
+        
+        console.log(url);
+        
+        https.get(url, function (web) {
+                 
+                 web.on('data', function (buffer) {
+                        response.write(buffer);
+                        });
+                 
+                 web.on('end', function (buffer) {
+                        response.end();
+                        });
+                 });
+        
+        });
+
+// items
+app.get('/items', function(request, response){
+        client.query('SELECT * FROM items', function(error, data){
+                     response.send(data);
+                     });
+        });
+
+app.get('/items/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        
+        client.query('SELECT * FROM items WHERE id=?', [id], function(error, data){
+                     response.send(data);
+                     });
+        
+        
+        });
+
+app.get('/brandItems/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        
+        client.query('SELECT B.name AS brandName, I.* FROM items AS I, brand AS B WHERE I.brandId=? AND I.brandId=B.id', [id], function(error, data){
+                     response.send(data);
+                     });
+        
+        
+        });
+
+app.post('/items/:id', function(request, response){
+         
+         var brandId = request.param('brandId');
+         var name = request.param('name');
+         var subtitle = request.param('subtitle');
+         var price = request.param('param');
+         var detail = request.param('detail');
+         var imageurl = request.param('imageurl');
+         
+         client.query('INSERT INTO items (brandId, name, subtitle, price, detail, imageurl) VALUES(?, ?, ?, ?, ?, ?)', [brandId, name, subtitle, price, detail, imageurl], function(error, data){
+                      response.send(data);
+                      });
+         
+         });
+
+app.put('/items/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        var brandId = request.param('brandId');
+        var name = request.param('name');
+        var subtitle = request.param('subtitle');
+        var price = request.param('param');
+        var detail = request.param('detail');
+        var imageurl = request.param('imageurl');
+        var query = 'UPDATE items SET';
+        
+        if (brandId) query += 'brandId=' + brandId + ' ';
+        if (name) query += 'name="' + name + '" ';
+        if (subtitle) query += 'subtitle="' + subtitle + '" ';
+        if (price) query += 'price=' + price + ' ';
+        if (detail) query += 'detail="' + detail + '" ';
+        if (imageurl) query += 'imageurl="' + imageurl + '" ';
+        query += 'WHERE id=' + id;
+        
+        client.query('query', function(error, data){
+                     response.send(data);
+                     });
+        
+        });
+
+app.del('/items/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        
+        client.query('DELETE FROM items WHERE id=?', [id], function(error, data){
+                     response.send(data);
+                     });
+        
+        });
+
+
+
+// launch a web server
+http.createServer(app).listen(52273, function(){
+	console.log('Server Running at http://127.0.0.1:52273');
+});

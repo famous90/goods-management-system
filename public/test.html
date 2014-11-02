@@ -1,0 +1,164 @@
+<head>
+    <title>TEST</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        #main1 {
+            height: 50px;
+            background: #aaaaaa;
+        }
+
+        #main2 {
+            height: 1000px;
+            background: #ffffff;
+        }
+
+        #main3 {
+            height: 100px;
+            background: #828282;
+        }
+        
+        #dialSection {
+            float: left;
+            position: relative;
+            width: 700px;
+            height: 1000px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        
+        #subDialRound, #mainDialRound, #dialRoundCenter {
+            -moz-border-radius: 1000px;  /* firefox */
+            -webkit-border-radius: 1000px; /* webkit */
+            border-radius: 1000px;   /* opera */
+        }
+        
+        #subDialRound {
+            position: absolute;
+            width: 1468px;
+            height: 1468px;
+            left: -796px;
+            top: -509px;
+            background: #049DC8;
+        }
+        
+        #mainDialRound {
+            position: absolute;
+            width: 1000px;
+            height: 1000px;
+            left: 234px;
+            top: 234px;
+            background: #8CE6FD;
+        }
+        
+        #dialRoundCenter {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 250px;
+            top: 250px;
+            background: #f0f0f0;
+        }
+            
+        #mainNav {
+            height: 700px;
+        }
+        
+        #mainDialSection {
+            float: left;
+            display: inline-block;
+            width: 400px;
+            height: 500px;
+        }
+        
+        #subDialSection {
+            display: inline-block;
+            width: 400px;
+            height: 500px;
+        }
+        
+        .menuItem {
+            position: relative;
+            width: 140px;
+            height: 140px;
+
+        /*    test */
+        /*    display: inline-block;*/
+            border: 1px solid #aaaaaa;
+        }
+
+        .menuItemName {
+            display: none;
+        }
+
+        .menuItemBrandImage {
+            width: 100%;
+            display: inline-block;
+        /*    height: 100%;*/
+            vertical-align: bottom;
+        }
+        
+        .subMenu {
+            display: none;
+        }
+        
+        .subMenuSelected {
+            display: block;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.menuItem').on('click', function () {
+                var selectedObject = $('.subMenuSelected');
+                selectedObject.removeClass('subMenuSelected');
+                selectedObject.addClass('subMenu');
+                
+                var objectId = $(this).text();
+                $('#' + objectId).removeClass('subMenu');
+                $('#' + objectId).addClass('subMenuSelected');
+            });
+
+        });
+        
+        
+    </script>
+
+</head>
+<body>
+    <div id="main1"></div>
+    <div id="main2">
+        <div id="dialSection">
+            <div id="subDialRound">
+                <div id="mainDialRound">
+                    <div id="dialRoundCenter">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mainNav">
+            <div id="mainDialSection">
+                <div class="menuItem"><img src="images/logo/abercrombie.png" class="menuItemBrandImage"><div class="menuItemName">menu1</div></div>
+                <div class="menuItem"><img src="images/logo/nike.png" class="menuItemBrandImage"><div class="menuItemName">menu2</div></div>
+                <div class="menuItem"><img src="images/logo/customellow.png" class="menuItemBrandImage"><div class="menuItemName">menu3</div></div>
+            </div>
+            <div id="subDialSection">
+                <div id="menu1" class="subMenu">
+                    <div id="item1-1" class="subMenuItem">item1-1</div>
+                    <div id="item1-2" class="subMenuItem">item1-2</div>
+                    <div id="item1-3" class="subMenuItem">item1-3</div>
+                </div>
+                <div id="menu2" class="subMenu">
+                    <div id="item2-1" class="subMenuItem">item2-1</div>
+                    <div id="item2-2" class="subMenuItem">item2-2</div>
+                    <div id="item2-3" class="subMenuItem">item2-3</div>
+                </div>
+                <div id="menu3" class="subMenu">
+                    <div id="item3-1" class="subMenuItem">item3-1</div>
+                    <div id="item3-2" class="subMenuItem">item3-2</div>
+                    <div id="item3-3" class="subMenuItem">item3-3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main3"></div>
+</body>
