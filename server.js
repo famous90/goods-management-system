@@ -48,7 +48,9 @@ app.get('/imageTest', function (request, response) {
                            mimeType: 'image/png',
                            body: fs.createReadStream('test.png') // read streams are awesome!
                            }
-                           },callback);
+                                     },function(err, response) {
+                                     console.log('error:', err, 'updated:', response.id);
+                                     });
         });
 
 
