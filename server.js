@@ -49,7 +49,7 @@ app.get('/imageTest', function (request, response) {
                            body: fs.createReadStream('test.png') // read streams are awesome!
                            }
                                      },function(err, response) {
-                                     console.log('error:', err, 'updated:', response.id);
+//                                     console.log('error:', err, 'updated:', response.id);
                                      });
         });
 
