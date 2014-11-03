@@ -26,7 +26,7 @@ var daumMapApiKey = 'e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40';
 
 // google apis
 var google = require('googleapis');
-var drive = google.drive('v2');
+//var drive = google.drive('v2');
 var OAuth2Client = google.auth.OAuth2;
 
 // client id and client secret are available at
