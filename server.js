@@ -25,34 +25,34 @@ var daumMapApiKey = 'e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40';
 
 
 // google apis
-var google = require('googleapis');
-//var drive = google.drive('v2');
-var OAuth2Client = google.auth.OAuth2;
-
-// client id and client secret are available at
-var CLIENT_ID = '88728940115.apps.googleusercontent.com';
-var CLIENT_SECRET = '8AL1KRaVBraWCr84-vNA85EA';
-var REDIRECT_URL = 'http://songdamkr1.cafe24.com/';
-
-var oauth2Client  = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
-var fs = require('fs');
-var drive = google.drive({ version: 'v2', auth: oauth2Client });
-
-app.get('/imageTest', function (request, response) {
-        drive.files.insert({
-                           resource: {
-                           title: 'testimage.png',
-                           mimeType: 'image/png'
-                           },
-                           media: {
-                           mimeType: 'image/png',
-                           body: fs.createReadStream('test.png') // read streams are awesome!
-                           }
-                                     },function(err, response) {
-//                                     console.log('error:', err, 'updated:', response.id);
-                                     });
-        });
-
+//var google = require('googleapis');
+////var drive = google.drive('v2');
+//var OAuth2Client = google.auth.OAuth2;
+//
+//// client id and client secret are available at
+//var CLIENT_ID = '88728940115.apps.googleusercontent.com';
+//var CLIENT_SECRET = '8AL1KRaVBraWCr84-vNA85EA';
+//var REDIRECT_URL = 'http://songdamkr1.cafe24.com/';
+//
+//var oauth2Client  = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
+//var fs = require('fs');
+//var drive = google.drive({ version: 'v2', auth: oauth2Client });
+//
+//app.get('/imageTest', function (request, response) {
+//        drive.files.insert({
+//                           resource: {
+//                           title: 'testimage.png',
+//                           mimeType: 'image/png'
+//                           },
+//                           media: {
+//                           mimeType: 'image/png',
+//                           body: fs.createReadStream('test.png') // read streams are awesome!
+//                           }
+//                                     },function(err, response) {
+////                                     console.log('error:', err, 'updated:', response.id);
+//                                     });
+//        });
+//
 
 
 
