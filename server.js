@@ -11,15 +11,45 @@ var client = mysql.createConnection({
     insecureAuth: true
 });
 
+
 // make a web server
 var app = express();
 app.use(express.static('public'));
 app.use(express.bodyParser());
 app.use(app.router);
 
+
 // daum api key
 var daumLocalApiKey = '15e9a80af4b72b9101d4d985c737f7e1b6308416';
 var daumMapApiKey = 'e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40';
+
+
+// google apis
+var google = require('googleapis');
+var drive = google.drive('v2');
+var OAuth2Client = google.auth.OAuth2;
+
+// client id and client secret are available at
+var CLIENT_ID = '88728940115.apps.googleusercontent.com';
+var CLIENT_SECRET = '8AL1KRaVBraWCr84-vNA85EA';
+var REDIRECT_URL = 'http://songdamkr1.cafe24.com/';
+
+var oauth2Client  = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
+var fs = require('fs');
+var drive = google.drive({ version: 'v2', auth: oauth2Client });
+
+drive.files.insert({
+       resource: {
+           title: 'testimage.png',
+           mimeType: 'image/png'
+       },
+       media: {
+           mimeType: 'image/png',
+           body: fs.createReadStream('test.png') // read streams are awesome!
+       }
+   }, callback);
+
+
 
 
 // brand
