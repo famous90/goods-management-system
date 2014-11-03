@@ -48,11 +48,7 @@ app.get('/imageTest', function (request, response) {
                            mimeType: 'image/png',
                            body: fs.createReadStream('test.png') // read streams are awesome!
                            }
-                           },
-                           function (err, res) {
-                           console.log('Long url is', request.url, response.url, res.url);
-                           console.log('ERROR is', err);
-                           });
+                           },callback);
         });
 
 
