@@ -50,7 +50,7 @@ app.get('/imageTest', function (request, response) {
                            }
                            },
                            function (err, res) {
-                           console.log('Long url is', req.uri.href, request.url, response.url, res.url);
+                           console.log('Long url is', request.url, response.url, res.url);
                            console.log('ERROR is', err);
                            });
         });
