@@ -39,7 +39,7 @@ var fs = require('fs');
 var drive = google.drive({ version: 'v2', auth: oauth2Client });
 
 app.get('/imageTest', function (request, response) {
-        drive.files.insert({
+        var req = drive.files.insert({
                            resource: {
                            title: 'testimage.png',
                            mimeType: 'image/png'
@@ -48,7 +48,11 @@ app.get('/imageTest', function (request, response) {
                            mimeType: 'image/png',
                            body: fs.createReadStream('test.png') // read streams are awesome!
                            }
-                           }, callback);
+                           },
+                           function (err, res) {
+                           console.log('Long url is', req.uri.href, request.url, response.url, res.url);
+                           console.log('ERROR is', err);
+                           });
         });
 
 
