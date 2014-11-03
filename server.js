@@ -39,7 +39,7 @@ var fs = require('fs');
 var drive = google.drive({ version: 'v2', auth: oauth2Client });
 
 app.get('/imageTest', function (request, response) {
-        var req = drive.files.insert({
+        drive.files.insert({
                            resource: {
                            title: 'testimage.png',
                            mimeType: 'image/png'
