@@ -38,16 +38,18 @@ var oauth2Client  = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
 var fs = require('fs');
 var drive = google.drive({ version: 'v2', auth: oauth2Client });
 
-drive.files.insert({
-       resource: {
-           title: 'testimage.png',
-           mimeType: 'image/png'
-       },
-       media: {
-           mimeType: 'image/png',
-           body: fs.createReadStream('test.png') // read streams are awesome!
-       }
-   }, callback);
+app.get('/imageTest', function (request, response) {
+        drive.files.insert({
+                           resource: {
+                           title: 'testimage.png',
+                           mimeType: 'image/png'
+                           },
+                           media: {
+                           mimeType: 'image/png',
+                           body: fs.createReadStream('test.png') // read streams are awesome!
+                           }
+                           }, callback);
+        });
 
 
 
