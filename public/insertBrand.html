@@ -1,0 +1,51 @@
+<head>
+    <title>Insert Brand</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        @import url(styles/form.css);
+    </style>
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+
+</head>
+<body>
+    <div class="insert_section">
+        <form class="insert_form" action="/brand" method="post" enctype="multipart/form-data" name="insert_brand_form">
+            <ul>
+                <li>
+                    <h2>Insert Brand</h2>
+                    <span class="required_notification">* Denotes required field</span>
+                </li>
+                <li>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" placeholder="brand name" required/>
+                </li>
+                <li>
+                    <label>Logo: </label>
+                    <input type="file" name="uploadImage" required />
+                </li>
+                <li>
+                    <button class="submit" type="submit">추가</button>
+                </li>
+            </ul>
+<!--
+        <fieldset>
+            <legend>브랜드 추가하기</legend>
+            <table>
+                <tr>
+                    <td><label>Brand Name</label></td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr>
+                    <td><label>Brand Image</label></td>
+                    <td><input type="file" name="uploadImage" /></td>
+                </tr>
+                <input type="submit" value="추가" />
+            </table>
+        </fieldset>
+-->
+        </form>
+    </div>
+</body>

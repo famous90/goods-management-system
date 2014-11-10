@@ -1,0 +1,95 @@
+<head>
+    <title>Insert Item</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        @import url(styles/form.css);
+    </style>
+    <script>
+        var brandId = '';
+        
+        $(document).ready(function () {
+            
+            var query = location.search.substr(1);
+            var data = query.split("&");
+            if (data.length != 1) { 
+                alert('url parameter error'); 
+                window.location='http://127.0.0.1:52273/hq.html'; 
+            }else {
+                var item = data[0].split("=");
+                brandId = item[1];
+            }
+            
+            $('[id=brandId_table_row_input]').attr("value", brandId);
+            
+        });
+    </script>
+
+</head>
+<body>
+    <div class="insert_section">
+        <form class="insert_form" action="/item" method="post" enctype="multipart/form-data" name="insert_item_form">
+            <ul>
+                <li>
+                    <h2>Insert Item</h2>
+                    <span class="required_notification">* Denotes Required Field</span>
+                </li>
+                <li>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" placeholder="item name" required />
+                </li>
+                <li>
+                    <label for="subtitle">Subtitle: </label>
+                    <input type="text" name="subtitle" placeholder="item subtitle" />
+                </li>
+                <li>
+                    <label for="price">Price: </label>
+                    <input type="text" name="price" placeholder="item price" required />
+                </li>
+                <li>
+                    <label for="detail">Detail: </label>
+                    <textarea type="text" name="detail" cols="65" rows="6"></textarea>
+                </li>
+                <li>
+                    <label for="image">Image: </label>
+                    <input type="file" name="uploadImage" placeholder="item image" required />
+                </li>
+                <li>
+                    <button class="submit" type="submit">추가</button>
+                </li>
+            </ul>
+<!--
+        <fieldset>
+            <legend>아이템 추가하기</legend>
+            <table>
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr style="display:none;">
+                    <td><label>BrandId</label></td>
+                    <td><input id="brandId_table_row_input" type="text" name="brandId" /></td>
+                </tr>
+
+                <tr>
+                    <td><label>Subtitle</label></td>
+                    <td><input type="text" name="subtitle" /></td>
+                </tr>
+                <tr>
+                    <td><label>Price</label></td>
+                    <td><input type="text" name="price" /></td>
+                </tr>
+                <tr>
+                    <td><label>Detail</label></td>
+                    <td><input type="text" name="detail" /></td>
+                </tr>
+                <tr>
+                    <td><label>Item Image</label></td>
+                    <td><input type="file" name="uploadImage" /></td>
+                </tr>
+                <input type="submit" value="추가" />
+            </table>
+        </fieldset>
+-->
+        </form>
+    </div>
+</body>

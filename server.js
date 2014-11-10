@@ -2,6 +2,7 @@ var http = require('http');
 var https = require('https');
 var express = require('express');
 var mysql = require('mysql');
+var fs = require('fs');
 
 // connect to database
 var client = mysql.createConnection({
@@ -63,6 +64,12 @@ app.get('/brand', function(request, response){
                      });
         });
 
+app.get('/admin/brand', function(request, response) {
+        client.query('SELECT * FROM brand', function(error, data) {
+                     response.send(data);
+                     });
+        });
+
 app.get('/brand/:id', function(request, response){
         
         var id = Number(request.param('id'));
@@ -76,13 +83,35 @@ app.get('/brand/:id', function(request, response){
 app.post('/brand', function(request, response){
          
          var name = request.param('name');
-         var imageurl = request.param('imageurl');
+         var image = request.files.uploadImage;
+         var imageSavePath = "images\/logo\/" + name + ".png";
+         var imagePath = "public\/" + imageSavePath;
          
-         client.query('INSERT INTO brand (name, imageurl) VALUES(?, ?)', [name, imageurl], function(error, data){
-                      response.send(data);
+         fs.readFile(image.path, function (error, data) {
+                     
+                     fs.writeFile(imagePath, data, function (err) {
+                                  if (err) { throw err; }
+                                  else { response.redirect("/hq.html"); }
+                                  });
+                     
+                     });
+         
+         client.query('INSERT INTO brand (name, imageurl) VALUES(?, ?)', [name, imageSavePath], function(error, data){
                       });
          
          });
+
+app.get('/admin/showItem?', function(request, response){
+        
+        var id = Number(request.param('id'));
+        var show = Number(request.param('show'));
+
+        console.log('request id :' + id + ' show : ' + show);
+        client.query('UPDATE items SET clientShow=? WHERE id=?', [show, id], function(error, data){
+                     response.send(data);
+                     });
+        
+        });
 
 app.put('/brand/:id', function(request, response){
         
@@ -136,7 +165,23 @@ app.get('/data.redirect?', function(request, response) {
 
 // items
 app.get('/items', function(request, response){
+        client.query('SELECT * FROM items WHERE clientShow=1', function(error, data){
+                     response.send(data);
+                     });
+        });
+
+app.get('/admin/items', function(request, response){
         client.query('SELECT * FROM items', function(error, data){
+                     console.log('admin brand items data : ' + data.length);
+                     response.send(data);
+                     });
+        });
+
+app.get('/admin/brandItems/:id', function(request, response){
+        
+        var id = Number(request.param('id'));
+        
+        client.query('SELECT I.* FROM items AS I, brand AS B WHERE I.brandId=? AND I.brandId=B.id', [id], function(error, data){
                      response.send(data);
                      });
         });
@@ -163,16 +208,30 @@ app.get('/brandItems/:id', function(request, response){
         
         });
 
-app.post('/items/:id', function(request, response){
+app.post('/item', function(request, response){
          
-         var brandId = request.param('brandId');
+         var brandId = Number(request.param('brandId'));
+         console.log('brandId:'+brandId);
+         
          var name = request.param('name');
          var subtitle = request.param('subtitle');
-         var price = request.param('param');
+         var price = Number(request.param('price'));
          var detail = request.param('detail');
-         var imageurl = request.param('imageurl');
          
-         client.query('INSERT INTO items (brandId, name, subtitle, price, detail, imageurl) VALUES(?, ?, ?, ?, ?, ?)', [brandId, name, subtitle, price, detail, imageurl], function(error, data){
+         var image = request.files.uploadImage;
+         var imageSavePath = "images\/" + name + ".png";
+         var imagePath = "public\/" + imageSavePath;
+         
+         fs.readFile(image.path, function (error, data) {
+                     
+                     fs.writeFile(imagePath, data, function (err) {
+                                  if (err) { throw err; }
+                                  else { response.redirect("back"); }
+                                  });
+                     
+                     });
+         
+         client.query('INSERT INTO items (brandId, name, subtitle, price, detail, imageurl, clientShow) VALUES(?, ?, ?, ?, ?, ?, 0)', [brandId, name, subtitle, price, detail, imageSavePath], function(error, data){
                       response.send(data);
                       });
          
@@ -212,7 +271,6 @@ app.del('/items/:id', function(request, response){
                      });
         
         });
-
 
 
 // launch a web server

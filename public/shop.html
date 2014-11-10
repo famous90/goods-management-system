@@ -1,0 +1,183 @@
+<head>
+    <title>Shop</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/project.js"></script>
+<!--    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=e0d5fc7d17aa2f5abb974f8c0aebec4ebf66cf40"></script>-->
+    <style>
+        @import url(styles/adminSection.css);
+    </style>
+    
+    <script>
+        
+        function configureData(master) {
+            
+            var brandOutput = '';
+            var itemOutput = '';
+
+            for (var i=0; i<brandMaster.brands.length; i++){
+
+                var theBrand = brandMaster.brands[i];
+                var theBrandId = theBrand.name.replace(/\s+/g, '');
+                brandOutput += '<div class="brand_section" id="' + theBrandId + '">';
+                brandOutput += '<img class="brand_image" src="' + theBrand.imageurl + '" width="200" />';
+                brandOutput += '<div class="brand_id">' + theBrand.id + '</div>';
+                brandOutput += '<div class="brand_name">' + theBrand.name + '</div>';
+                brandOutput += '</div>';
+
+                for (var j=0; j<theBrand.itemMaster.items.length; j++){
+
+                    var theItem = theBrand.itemMaster.items[j];
+                    
+                    var theItemShowButtonState;
+                    var theItemStateClass;
+                    if (theItem.clientShow == 0) { theItemShowButtonState = '보이기'; theItemStateClass = 'client_hide_item'; }
+                    else { theItemShowButtonState = '숨기기'; theItemStateClass = 'client_show_item'; }
+                    
+                    itemOutput += '<div class="item_section ' + theBrandId + ' ' + theItemStateClass + '">';
+                    itemOutput += '<img class="item_image" src="' + theItem.imageurl + '" width="200" />';
+                    itemOutput += '<div class="item_id">' + theItem.id + '</div>';
+                    itemOutput += '<div class="item_brandId">' + theItem.brandId + '</div>';
+                    itemOutput += '<div class="item_name">' + theItem.name + '</div>';
+                    itemOutput += '<div class="item_subtitle">' + theItem.subtitle + '</div>';
+                    itemOutput += '<div class="item_price">' + theItem.price + '</div>';
+                    itemOutput += '<div class="item_detail">' + theItem.detail + '</div>';
+                    itemOutput += '<div class="item_show">';
+                    itemOutput += '<div class="item_show_button">' + theItemShowButtonState + '</div>';
+                    itemOutput += '<div class="item_show_state">' + theItem.clientShow + '</div>';
+                    itemOutput += '</div>';
+                    itemOutput += '</div>';
+
+                }
+            }
+
+            $('#brand_admin_section').append(brandOutput);
+            $('#item_admin_section').append(itemOutput);
+
+        }
+        
+        var brandMaster = new BrandMaster();
+        
+        function selectData() {
+                 
+            // get brands
+            $.getJSON('/admin/brand', function(data){    
+
+                $(data).each(function(index, item){
+
+                    var brand =  new Brand(item.id, item.name, item.imageurl);
+                    brandMaster.brands.push(brand);
+                    
+                });
+
+            }).done(function () {
+            
+            });
+            
+            $.getJSON('/admin/items', function(data) {
+
+                $(data).each(function(index, item){
+
+                    var item = new Item(item.id, item.brandId, item.name, item.subtitle, item.price, item.detail, item.imageurl, item.clientShow);
+                    brandMaster.pushItem(item);
+
+                });
+                
+                
+            }).done(function () {                 
+                
+                configureData(brandMaster);
+                
+            });
+        };
+
+        
+        $(document).ready(function(){
+
+            selectData();
+    
+        });
+        
+        $(document).on('click', '.brand_section', function () {
+            
+            window.location = '#item_admin_section';
+            
+            var previousSelectedObjects = $('.item_section_selected');
+            previousSelectedObjects.each(function (index, item) {
+                $(item).addClass('item_section');
+                $(item).removeClass('item_section_selected');
+            });
+            
+            var selectedBrandSectionId = $(this).attr("id");
+            
+            var selectedBrandItemSections = $('[class*=' + selectedBrandSectionId + ']');
+            selectedBrandItemSections.push($('[id=add_item_section]'));
+            selectedBrandItemSections.each(function(index, item) {
+                $(item).removeClass('item_section');
+                $(item).addClass('item_section_selected');
+            });
+            $('[id=item_admin_section]').animate({
+                height: 'auto'
+            }, 1000);
+            
+        });
+        
+        $(document).on('click', '.item_show_button', function () {
+            
+            var selectedItemShowButton = $(this);
+            var selectedItem = selectedItemShowButton.parent().parent();
+            var selectedItemIdSection = selectedItem.find('[class=item_id]');
+            var selectedItemId = selectedItemIdSection.text();
+            var selectedItemShowStateSection = selectedItemShowButton.parent().find('[class=item_show_state]');
+            var selectedItemShowState = selectedItemShowStateSection.text();
+            var requestItemShowState;
+            var selectedItemShowClass;
+            var requestItemShowClass;
+            var selectedItemButtonState;
+            if (selectedItemShowState == 0) { 
+                requestItemShowState = 1;
+                selectedItemButtonState = '숨기기';
+                selectedItemShowClass = 'client_hide_item'; 
+                requestItemShowClass = 'client_show_item'; 
+            }else { 
+                requestItemShowState = 0; 
+                selectedItemButtonState = '보이기';
+                selectedItemShowClass = 'client_show_item'; 
+                requestItemShowClass = 'client_hide_item'; 
+            }
+            
+            var requestUrl = '/admin/showItem?id=' + selectedItemId + '&show=' + requestItemShowState;
+//            alert('selected'+selectedItemId + 'state'+selectedItemShowState + ' url : ' + requestUrl);
+//            var parentName = $(this).parent().parent().find('[class=item_name]').text();
+            
+            
+            $.getJSON(requestUrl, function(data){    
+                
+            }).done(function () {
+            
+                alert('parent name ' + selectedItem.find('[class=item_name]').text());
+                selectedItem.removeClass(selectedItemShowClass);
+                selectedItem.addClass(requestItemShowClass);
+                selectedItemShowButton.html(selectedItemButtonState);
+                selectedItemShowStateSection.html(requestItemShowState);
+                
+            });
+            
+            
+                
+        });
+        
+    </script>
+
+</head>
+<body>
+    <header>
+    </header>
+    <div id="content">
+        <section id="brand_admin_section">
+        </section>
+        <section id="item_admin_section">
+        </section>
+    </div>
+    <footer>
+    </footer>
+</body>

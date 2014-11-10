@@ -165,6 +165,7 @@ table {
     height: 187px;
     text-align: center;
     overflow: hidden;
+    background: white;
     
     -moz-border-radius: 40px;  /* firefox */
     -webkit-border-radius: 40px; /* webkit */
