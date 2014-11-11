@@ -53,7 +53,8 @@ table {
 }
 
 #main2 {
-    height: 1000px;
+/*    width: 1500px;*/
+/*    height: 1000px;*/
 /*    background: #eeeeee;*/
 }
 
@@ -61,7 +62,7 @@ table {
 /*    height: 100px;*/
 /*    test*/
     background: #828282;
-    height: 0;
+    height: 0px;
     overflow: hidden;
 }
 
@@ -73,8 +74,8 @@ table {
 
 /* dial content */
 #dialSection {
-    float: left;
-    position: relative;
+/*    float: left;*/
+    position: absolute;
     width: 700px;
     height: 1000px;
     overflow: hidden;
@@ -119,7 +120,7 @@ table {
 #mainNav {
 /*    width: auto;*/
 /*    height: auto;*/
-    position: absolute;
+    position: relative;
     
 }
 
@@ -129,7 +130,7 @@ table {
     height: 1000px;
     overflow: hidden;
     display: inline-block;
-    float: left;
+/*    float: left;*/
 }
 
 .menuItem {
@@ -193,7 +194,7 @@ table {
     position: relative;
     display: inline-block;
     text-align: center;
-    max-width: 403px;
+    max-width: 500px;
 /*    float: left;*/
     
 /*    test*/
@@ -205,7 +206,8 @@ table {
 }
 
 .itemDetailSelected {
-    margin-top: 40px;
+/*    margin-top: 40px;*/
+    margin: 70px;
     display: inline-block;
     text-align: center;
     
