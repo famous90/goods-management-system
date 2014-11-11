@@ -33,13 +33,13 @@ Item.prototype.toString = function(){
 // item master
 function ItemMaster(){
     this.items = new Array();
-//    this.count = 0;
+    this.count = 0;
 }
 
-//ItemMaster.prototype.addItem = function (item) {
-//    this.items.add(item);
-//    this.count ++;
-//};
+ItemMaster.prototype.pushItem = function (item) {
+    this.items.push(item);
+    this.count ++;
+};
 
 // brand
 function Brand(id, name, imageurl){
@@ -62,7 +62,7 @@ BrandMaster.prototype.pushItem = function(item){
     if (!(item instanceof Item)) { return; }
     for (var i=0; i<this.brands.length; i++){
         if (this.brands[i].id == item.brandId) {
-            this.brands[i].itemMaster.items.push(item);
+            this.brands[i].itemMaster.pushItem(item);
         }
     }
 };
