@@ -113,6 +113,17 @@
             
         }
         
+        function showDaumMap(lat, lon) {
+            
+            var mapContainer = document.getElementById("brandDetailDaumMap");
+            var options = {
+                center: new daum.maps.LatLng(lat, lon),
+                level: 3
+            };                    
+            var map = new daum.maps.Map(mapContainer, options);
+
+        }
+        
         function showNearbyBrandShop(position, brandName) {
             
             $('#main3').animate({
@@ -155,19 +166,14 @@
                     var nearbyShopLatitude = nearbyShop.find('latitude').text();
                     var nearbyShopLongitude = nearbyShop.find('longitude').text();
                     
-                    var mapContainer = document.getElementById("brandDetailDaumMap");
-                    var options = {
-                        center: new daum.maps.LatLng(Number(lat), Number(lon)),
-                        level: 3
-                    };
-                    
-                    var map = new daum.maps.Map(mapContainer, options);
+                    showDaumMap(Number(nearbyShopLatitude), Number(nearbyShopLongitude));
                     
                     $('#brandDetailTitle').text(nearbyShop.find('title').text());
                     $('#brandDetailAddress').text(nearbyShop.find('address').text());
                     $('#brandDetailPhone').text(nearbyShop.find('phone').text());
                     $('#brandDetailDistance').text(nearbyShop.find('distance').text()+'m');
                     $('#brandDetailDirection').text('(여기서 ' + nearbyShop.find('direction').text() + '쪽 방향에 있습니다)');
+                    
                 }else {
                     
                     $('#main3').animate({
