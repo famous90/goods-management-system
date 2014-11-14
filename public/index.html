@@ -39,10 +39,10 @@
                 objectLeft = radius * Math.cos(Math.PI * (index - selectedIndex) / 6) + dialCenterLeft - side/2;
                 objectTop = radius * Math.sin(Math.PI * (index - selectedIndex) / 6) + dialCenterTop - side/2;
 //                objectRotateDegree = 30 * (transIndex - selectedIndex );
-//                if (((transIndex - selectedIndex )>4) || ((transIndex - selectedIndex )<-1)) { objectDisplay = 'block'; }
-//                else { objectDisplay = 'block'; }
+                if (((index - selectedIndex )>4) || ((index - selectedIndex )<-2)) { objectDisplay = 'none'; }
+                else { objectDisplay = 'inline-block'; }
                 
-                $(item).css({ border: '0px', width: side, height: side });
+                $(item).css({ border: '0px', width: side, height: side, display: objectDisplay });
                 if (index == selectedIndex) { $(item).css({ border: '10px solid #aaaaaa', width: side-10, height: side-10 }); }
                 
                 $(item).animate({
@@ -337,8 +337,9 @@
 
 </head>
 <body>
-    <div id="main1">
-    </div>
+    <header class="main_header">
+        <h1 class="type">고객용</h1>
+    </header>
     <div id="main2">
         <div id="dialSection">
             <div id="subDialRound">

@@ -45,10 +45,23 @@ table {
 	border-spacing: 0;
 }
 
+.main_header {
+    position: relative;
+    height: 60px;
+    background: #dddddd;
+}
+
+.main_header > h1.type {
+    padding: 5px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+
 /* main content */
 #main1 {
 /*    test*/
-    height: 50px;
+    height: 60px;
     background: #dddddd;
 }
 
