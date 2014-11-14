@@ -210,6 +210,8 @@ app.get('/brandItems/:id', function(request, response){
 
 app.post('/item', function(request, response){
          
+         console.log('hi');
+         
          var brandId = Number(request.param('brandId'));
          console.log('brandId:'+brandId);
          
