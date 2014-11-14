@@ -228,7 +228,7 @@ app.post('/item', function(request, response){
                      
                      fs.writeFile(imagePath, data, function (err) {
                                   if (err) { throw err; }
-                                  else { response.redirect("back"); }
+                                  else { response.redirect("/hq.html"); }
                                   });
                      
                      });
